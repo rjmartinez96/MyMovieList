@@ -14,7 +14,7 @@ public class RestServiceofMovie {
 	@Autowired
 	private ServiceLayer sl;
 	
-	@RequestMapping(value="/getdataobjectofmovie/tconst={id}", method=RequestMethod.GET)
+	@RequestMapping(value="/getdataobjectofmovie/id={id}", method=RequestMethod.GET)
 	public Movie getMov(@PathVariable("id") Integer id) {
 		return sl.getMovie(id);
 	}
