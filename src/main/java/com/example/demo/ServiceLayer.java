@@ -2,7 +2,6 @@ package com.example.demo;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,5 +25,9 @@ public class ServiceLayer {
 	
 	public List<Movie> getMoviesByYear(int year){
 		return mi.findByStartYear(year);
+	}
+	
+	public List<Movie> getMovieByTitle(String title) {
+		return mi.findByPrimaryTitle(title);
 	}
 }

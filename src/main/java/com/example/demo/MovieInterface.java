@@ -11,4 +11,5 @@ import org.springframework.stereotype.Repository;
 public interface MovieInterface extends CrudRepository<Movie, Integer>{
 	List<Movie> findByIsAdult(int isAdult);
 	List<Movie> findByStartYear(int startYear);
+	List<Movie> findByPrimaryTitle(String title);
 }

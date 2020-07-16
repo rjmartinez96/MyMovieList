@@ -14,18 +14,23 @@ public class RestServiceofMovie {
 	@Autowired
 	private ServiceLayer sl;
 	
-	@RequestMapping(value="/getdataobjectofmovie/id={id}", method=RequestMethod.GET)
+	@RequestMapping(value="/get_single_movie/id={id}", method=RequestMethod.GET)
 	public Movie getMov(@PathVariable("id") Integer id) {
 		return sl.getMovie(id);
 	}
 	
-	@RequestMapping(value="/getlistofmovies/isadult={adult}", method=RequestMethod.GET)
+	@RequestMapping(value="/get_list_of_movies/isadult={adult}", method=RequestMethod.GET)
 	public List<Movie> getAdultList(@PathVariable("adult") Integer isAdult) {
 		return sl.getAdultMovies(isAdult);
 	}
 	
-	@RequestMapping(value="/getlistofmovies/year={year}", method=RequestMethod.GET)
+	@RequestMapping(value="/get_list_of_movies/year={year}", method=RequestMethod.GET)
 	public List<Movie> getStartYearList(@PathVariable("year") Integer year) {
 		return sl.getMoviesByYear(year);
+	}
+	
+	@RequestMapping(value="/get_single_movie/title={title}", method=RequestMethod.GET)
+	public List<Movie> getMov(@PathVariable("title") String title) {
+		return sl.getMovieByTitle(title);
 	}
 }
