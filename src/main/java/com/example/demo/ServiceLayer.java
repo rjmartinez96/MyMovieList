@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,14 +21,20 @@ public class ServiceLayer {
 	}
 	
 	public List<Movie> getAdultMovies(int is_adult){
-		return mi.findByIsAdult(is_adult);
+		List<Movie> temp = mi.findByIsAdult(is_adult);
+		if(temp.isEmpty()) temp = new ArrayList<Movie>();
+		return temp;
 	}
 	
 	public List<Movie> getMoviesByYear(int year){
-		return mi.findByStartYear(year);
+		List<Movie> temp = mi.findByStartYear(year);
+		if(temp.isEmpty()) temp = new ArrayList<Movie>();
+		return temp;
 	}
 	
 	public List<Movie> getMovieByTitle(String title) {
-		return mi.findByPrimaryTitle(title);
+		List<Movie> temp = mi.findByPrimaryTitle(title);
+		if(temp.isEmpty()) temp = new ArrayList<Movie>();
+		return temp;
 	}
 }
